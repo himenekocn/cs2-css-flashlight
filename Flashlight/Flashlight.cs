@@ -41,6 +41,9 @@ public class Flashlight : BasePlugin
             foreach (var player in _connectedPlayers.Where(player => player is { IsValid: true, IsBot: false, PawnIsAlive: true }))
             {
                 ToggleFlashlight(player);
+
+                if(player.Team == CsTeam.Spectator) continue;
+                if(player.Team == CsTeam.None) continue;
                 
                 if (_playerCanToggle[player] == false) continue;
                 
