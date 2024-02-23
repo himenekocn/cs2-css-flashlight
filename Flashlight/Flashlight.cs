@@ -4,7 +4,7 @@ using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Commands;
-using Vector = CounterStrikeSharp.API.Modules.Utils.Vector;
+using CounterStrikeSharp.API.Modules.Utils;
 
 namespace Flashlight;
 
@@ -42,8 +42,8 @@ public class Flashlight : BasePlugin
             {
                 ToggleFlashlight(player);
 
-                if(player.PlayerController.Team == CsTeam.Spectator) continue;
-                if(player.PlayerController.Team == CsTeam.None) continue;
+                if(player.Team == CsTeam.Spectator) continue;
+                if(player.Team == CsTeam.None) continue;
                 
                 if (_playerCanToggle[player] == false) continue;
                 
