@@ -13,7 +13,7 @@ public class Flashlight : BasePlugin
 {
     public override string ModuleAuthor => "creazy.eth";
     public override string ModuleName => "Flashlight";
-    public override string ModuleDescription => "Flashlight for Counter-Strike 2";
+    public override string ModuleDescription => "Flashlight for Counter-Strike 2 ";
     public override string ModuleVersion => "0.0.6";
 
     private static string ModuleDisplayName => "Flashlight";
