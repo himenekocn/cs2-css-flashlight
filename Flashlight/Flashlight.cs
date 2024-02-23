@@ -42,8 +42,8 @@ public class Flashlight : BasePlugin
             {
                 ToggleFlashlight(player);
 
-                if(player.Team == CsTeam.Spectator) continue;
-                if(player.Team == CsTeam.None) continue;
+                if(player.PlayerController.Team == CsTeam.Spectator) continue;
+                if(player.PlayerController.Team == CsTeam.None) continue;
                 
                 if (_playerCanToggle[player] == false) continue;
                 
