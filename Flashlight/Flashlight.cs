@@ -90,7 +90,7 @@ public class Flashlight : BasePlugin
     {
         var player = @event.Userid;
         
-        if (!player.IsValid || player.IsBot) return HookResult.Continue;
+        if (player == null || !player.IsValid || player.IsBot) return HookResult.Continue;
         
         _connectedPlayers.Add(player);
         _playerUsingFlashlight[player] = false;
@@ -107,7 +107,7 @@ public class Flashlight : BasePlugin
     {
         var player = @event.Userid;
         
-        if (!player.IsValid || player.IsBot) return HookResult.Continue;
+        if (player == null || !player.IsValid || player.IsBot) return HookResult.Continue;
         
         _connectedPlayers.Remove(player);
         _playerUsingFlashlight.Remove(player);
@@ -128,7 +128,7 @@ public class Flashlight : BasePlugin
     {
         var player = @event.Userid;
         
-        if (!player.IsValid || player.IsBot) return HookResult.Continue;
+        if (player == null || !player.IsValid || player.IsBot) return HookResult.Continue;
         
         if (_connectedPlayers.Contains(player) == false)
         {
@@ -148,7 +148,7 @@ public class Flashlight : BasePlugin
     {
         var player = @event.Userid;
         
-        if (!player.IsValid || player.IsBot) return HookResult.Continue;
+        if (player == null || !player.IsValid || player.IsBot) return HookResult.Continue;
         
         _playerUsingFlashlight[player] = false;
         
