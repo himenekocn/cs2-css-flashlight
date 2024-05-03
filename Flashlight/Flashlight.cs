@@ -161,7 +161,10 @@ public class Flashlight : BasePlugin
         {
             if (_playerFlashlight.TryGetValue(player, out var value))
             {
-                value.Remove();
+                if (value != null && value.IsValid)
+                {
+                    value.Remove();
+                }
                 _playerFlashlight.Remove(player);
             }
             
